@@ -38,9 +38,9 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 --questions
-1.Thread myThread=new Thread(Runable..);/n
-myThread.start();/n
-Ruleaza MEREU? Gen un while?/n
+1.Thread myThread=new Thread(Runable..);
+myThread.start();
+Ruleaza MEREU? Gen un while?
 
 --notes
 Baza OO refolosirea codului: adaugarea de continut NOU fara nevoia de a modifica ceva deja facut.
