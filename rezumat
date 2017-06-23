@@ -1,0 +1,24 @@
+
+--questions
+1.Thread myThread=new Thread(Runable..);
+myThread.start();
+Ruleaza MEREU? Gen un while?
+
+--notes
+Baza OO refolosirea codului: adaugarea de continut NOU fara nevoia de a modifica ceva deja facut.
+O clasa este un blueprint, descrie cum este construit obiectul. O clasa are stare (variabile) si comportament (metode).
+Variabilele se creeaza prive si se creeaza o metoda publica get()
+O subclasa mosteneste toate metodele publice, nu si cele private.
+Polimorfism. O clasa care nu e abstracta este o clas "concreta". O clasa abstracta nu are metode cu corp.
+O metoda abstracta nu are corp. public abstract void eat(); Metoda abstracta in clasa -> clasa marcata ca si abstracta.
+Clasele ce extind clasa abstracta trebuie sa defineasca metoda abstracta!
+TOATE clasele exind clasa Obiect. 
+Interfata, implicit publica si abstracta. O clasa poate exinde doar o clasa dar implementa mai multe interfete.
+Pentru a invoca medota clasei mama super.eat().
+O variabila static este pentru toate instantele clasei nu individual pentru fiecare instanta a clasei
+Pentru salvat obiecte : implenentata interfata Serializable
+Ce a mai buna metoda pentru a sti ca un thread ruleaza e ca celalalt thread sa fie "adormit"
+Pentru a fi siguri ca doua threaduri nu utilizeaza "concomitent" o variabila, se adauga "syncronized" metodei.
+
+
+
