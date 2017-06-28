@@ -11,7 +11,6 @@ NESTED CLASSES
   
  Pentru nested classes nu se recomanda serializarea!
  
- INNER CLASS (non static?) - exista in instanta clasei exterioare 
  Sunt de 2 tipuri:
   - LOCAL CLASS
   - ANONYMOUS CLASS
