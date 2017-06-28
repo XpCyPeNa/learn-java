@@ -1,0 +1,86 @@
+NESTED CLASSES
+  - Clasa in interiorul altei clase
+  
+ De 2 tipuri:
+  - STATIC: nu au acces direct la metodele altor clase. Acele clase trebuiesc instaintiate pentru a le folosi metodele
+  - NON STATIC: au acces direct la metodele altor clase 
+  
+ Nested Classes:
+  - gruparea claselor, in special clasele ce sunt folosite doar intr un singur loc
+  - incapsulare (accesul la o metoda privata a unei clase) 
+  
+ Pentru nested classes nu se recomanda serializarea!
+ 
+ INNER CLASS (non static?) - exista in instanta clasei exterioare 
+ Sunt de 2 tipuri:
+  - LOCAL CLASS
+  - ANONYMOUS CLASS
+  
+  Local class: tipic clasele locale se gasesc in blocul unei metode
+  Clasele locale au access la variabilele locale care sunt declarate FINAL (in java 8 se pot accesa variabilele final plus cele efectiv final
+  (O variabilă sau un parametru a cărui valoare nu este niciodată modificată după ce este inițializată este efectiv finala.)
+  
+  NU se pot declara interfete in interiorul blocului unei metode.
+  
+  Inner Class & Local Class:
+    - nici una nu poate declara metode statice
+    - clasele locale nu sunt statice deoarece au acces la metodele clasei membra.
+    - o clasa locala poate avea variabile statice, constante
+  
+  Clase anonime: permit sa fie declarate si instantiate in acelasi timp. Ca si clasele locale doar ca nu au nume.
+    - au acces la metodele clasei mama ??????(An anonymous class has access to the members of its enclosing class)
+    - nu au acces decat la variabilele declarate final sau efectiv final.
+    - nu pot declara metode statice si interfete in clase anonime
+    - pot avea variabile statice , constante 
+    - nu se pot declara constructori
+  Sunt adesea folosite in aplicati cu interfete grafice pentru eventuri
+  
+  public class HelloWorld extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Hello World!");
+        Button btn = new Button();
+        btn.setText("Say 'Hello World'");
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+ 
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Hello World!");
+            }
+        });
+        
+        StackPane root = new StackPane();
+        root.getChildren().add(btn);
+        primaryStage.setScene(new Scene(root, 300, 250));
+        primaryStage.show();
+    }
+}
+  public class HelloWorldAnonymousClasses {
+      interface HelloWorld {
+        public void greet();
+        public void greetSomeone(String someone); }  
+      public void sayHello() {        
+        class EnglishGreeting implements HelloWorld {
+            String name = "world";
+            public void greet() {
+                greetSomeone("world");            }
+            public void greetSomeone(String someone) {
+                name = someone;
+                System.out.println("Hello " + name); }  }
+        HelloWorld englishGreeting = new EnglishGreeting();
+        HelloWorld frenchGreeting = new HelloWorld() {
+            String name = "tout le monde";
+            public void greet() {
+                greetSomeone("tout le monde");}
+            public void greetSomeone(String someone) {
+                name = someone;
+                System.out.println("Salut " + name);}
+        };    }
+  
+/// Expresii lambda: desi clasele anonime sunt simple de implementat acestea pot fi greu de inteles. 
+ copy paste dede
+  
